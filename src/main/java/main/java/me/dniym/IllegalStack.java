@@ -709,7 +709,7 @@ public class IllegalStack extends JavaPlugin {
             }
             if (p.isRelevantToVersion(getVersion())) {
                 if (config.getString(p.getConfigPath()) == null) {
-                    if (p.getConfigValue() instanceof Boolean) {
+                    if (p.getDefaultValue() instanceof Boolean) {
                         p.setEnabled((Boolean) p.getDefaultValue());
                     }
                     added.put(p.getConfigPath(), p.getDefaultValue());
@@ -717,7 +717,7 @@ public class IllegalStack extends JavaPlugin {
                 for (Protections child : p.getChildren()) {
                     if (config.getString(child.getConfigPath()) == null) {
 
-                        if (child.getConfigValue() instanceof Boolean) {
+                        if (child.getDefaultValue() instanceof Boolean) {
                             child.setEnabled((Boolean) child.getDefaultValue());
                         }
                         added.put(child.getConfigPath(), child.getDefaultValue());
